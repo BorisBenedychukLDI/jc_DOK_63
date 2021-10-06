@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "817864175688",
+    "project_id": "comjokascityspotcom",
+    "storage_bucket": "comjokascityspotcom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817864175688:android:973bdf4b0dbaf8945ba87d",
+        "android_client_info": {
+          "package_name": "com.jokas.citys.pot.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817864175688-sfgi8o4p35u2nn3bms53uslmnp2e4q0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6dI4QytSElCjuTmxk9lTyOhZfQje4RtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817864175688-sfgi8o4p35u2nn3bms53uslmnp2e4q0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
