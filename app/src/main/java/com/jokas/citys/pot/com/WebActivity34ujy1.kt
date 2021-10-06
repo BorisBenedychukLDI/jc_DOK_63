@@ -24,10 +24,12 @@ import kotlinx.coroutines.launch
 class WebActivity34ujy1 : AppCompatActivity() {
 
     private lateinit var wv34ujy1: WebView
+    private lateinit var view34ujy12: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_activity34ujy1)
+        view34ujy12 = findViewById(R.id.v_web_34ujy12)
         setupWebViewLayout34ujy1()
         circleChecker34ujy1()
     }
@@ -54,7 +56,7 @@ class WebActivity34ujy1 : AppCompatActivity() {
     }
 
     private fun splashAnimation34ujy1() {
-        findViewById<View>(R.id.v_web_34ujy1).let { circleWeb34ujy1 ->
+        findViewById<View>(R.id.v_web_34ujy12).let { circleWeb34ujy1 ->
             AnimatorSet().play(
                 ObjectAnimator.ofPropertyValuesHolder(
                     circleWeb34ujy1, PropertyValuesHolder.ofFloat(
@@ -91,7 +93,7 @@ class WebActivity34ujy1 : AppCompatActivity() {
 
 
     private fun returnCircle34ujy1 () {
-        findViewById<View>(R.id.v_web_34ujy1).run {
+        findViewById<View>(R.id.v_web_34ujy12).run {
             animate().alpha(1f).run { duration = 500}
             animate().scaleX(1f).run { duration = 500 }
             animate().scaleY(1f).run { duration = 500 }
@@ -102,26 +104,9 @@ class WebActivity34ujy1 : AppCompatActivity() {
         lifecycleScope.launch {
             delay(500)
             splashAnimation34ujy1()
-            while (isActive) {
-                if(!internetChecker34ujy1()) {
-                    returnCircle34ujy1()
-                    delay(500)
-                    startActivity(Intent(this@WebActivity34ujy1, InternetConnectionActivity34ujy1::class.java),
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(this@WebActivity34ujy1,
-                            findViewById(R.id.v_web_34ujy1),
-                            "view_internet" )
-                            .toBundle())
-                    cancel()
-                }
-                delay(500)
-            }
         }
     }
 
-    override fun onStop() {
-        finish()
-        super.onStop()
-    }
 
     private fun setupWebViewLayout34ujy1 () {
         wv34ujy1 = findViewById(R.id.wv_34ujy1)
@@ -137,7 +122,6 @@ class WebActivity34ujy1 : AppCompatActivity() {
                 displayZoomControls = false
                 domStorageEnabled = true
                 mediaPlaybackRequiresUserGesture = false
-
             }
 
             scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
@@ -146,6 +130,24 @@ class WebActivity34ujy1 : AppCompatActivity() {
                     view34ujy1: WebView?,
                     request34ujy1: WebResourceRequest?
                 ): Boolean {
+                    if(!internetChecker34ujy1()) {
+                        lifecycleScope.launch {
+                            returnCircle34ujy1()
+                            delay(500)
+                            startActivity(
+                                Intent(
+                                    this@WebActivity34ujy1,
+                                    InternetConnectionActivity34ujy1::class.java
+                                ),
+                                ActivityOptionsCompat.makeSceneTransitionAnimation(
+                                    this@WebActivity34ujy1,
+                                    view34ujy12,
+                                    "view_internet"
+                                ).toBundle()
+                            )
+                            finish()
+                        }
+                    }
                     val prohibitedLinks34ujy1 = listOf("facebook")
                     val modifiedLinks34ujy1 = listOf("mailto:", "tel:")
                     return when {

@@ -27,7 +27,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <View
-        android:id="@+id/v_web_34ujy1"
+        android:id="@+id/v_web_34ujy12"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/custom_view_34ujy1"
