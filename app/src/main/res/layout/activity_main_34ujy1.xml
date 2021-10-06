@@ -29,7 +29,7 @@
         android:contentDescription="@string/logo_jc_34ujy1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jc_logo_34ujy1" />
+        app:srcCompat="@drawable/logo_34ujy1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_34ujy1"

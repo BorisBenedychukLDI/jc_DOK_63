@@ -132,6 +132,7 @@ class WebActivity34ujy1 : AppCompatActivity() {
                 ): Boolean {
                     if(!internetChecker34ujy1()) {
                         lifecycleScope.launch {
+                            visibility = View.INVISIBLE
                             returnCircle34ujy1()
                             delay(500)
                             startActivity(
